@@ -1,6 +1,7 @@
 const { createServer } = require("http");
+const { GET } = require("./get");
+const { PORT, HOST } = require("./utils/config");
 
-const PORT = 3001;
 const methods = Object.create(null);
 
 async function notAllowed(request) {
@@ -10,6 +11,8 @@ async function notAllowed(request) {
     contentType: "application/json",
   };
 }
+
+methods.GET = GET;
 
 createServer((request, response) => {
   console.log(request.method, request.url);
@@ -35,4 +38,4 @@ createServer((request, response) => {
         status: 500,
       };
     });
-}).listen(PORT);
+}).listen(PORT, HOST);

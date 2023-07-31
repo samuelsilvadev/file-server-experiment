@@ -11,6 +11,9 @@
   "license": "ISC",
   "prettier": {},
   "dependencies": {
+    "mime": "^3.0.0"
+  },
+  "devDependencies": {
     "nodemon": "^3.0.1"
   }
 }
