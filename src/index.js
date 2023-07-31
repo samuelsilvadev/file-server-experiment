@@ -2,6 +2,7 @@ const { createServer } = require("http");
 const { GET } = require("./get");
 const { PORT, HOST } = require("./utils/config");
 const { DELETE } = require("./delete");
+const { PUT } = require("./put");
 
 const methods = Object.create(null);
 
@@ -15,6 +16,7 @@ async function notAllowed(request) {
 
 methods.GET = GET;
 methods.DELETE = DELETE;
+methods.PUT = PUT;
 
 createServer((request, response) => {
   const handler = methods[request.method] || notAllowed;
