@@ -14,9 +14,9 @@ async function notAllowed(request) {
   };
 }
 
-methods.GET = GET;
-methods.DELETE = DELETE;
-methods.PUT = PUT;
+[GET, DELETE, PUT].forEach((handler) => {
+  methods[handler.name] = handler;
+});
 
 createServer((request, response) => {
   const handler = methods[request.method] || notAllowed;
