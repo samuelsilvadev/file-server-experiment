@@ -1,0 +1,16 @@
+{
+  "name": "file-server-eloquent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "prettier": {},
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
